@@ -55,24 +55,31 @@ This will install dependencies for both the frontend and backend workspaces.
 
 ```env
 # AWS Configuration
-AWS_ACCESS_KEY_ID=your-access-key-id
-AWS_SECRET_ACCESS_KEY=your-secret-access-key
+AWS_ACCESS_KEY_ID=iwrnirnrn.........
+AWS_SECRET_ACCESS_KEY=LQVwS4b8rXbLAU7mDOX............
 AWS_REGION=us-east-1
-ASSUME_ROLE_ARN=arn:aws:iam::430118833501:role/role-log-analyzer-bedrock
+# ASSUME_ROLE_ARN is not needed for root accounts - commented out
+# ASSUME_ROLE_ARN=..............
 
 # Application Configuration
 NODE_ENV=development
-PORT=3000
-FRONTEND_URL=http://localhost:5173
+PORT=3001
+FRONTEND_URL=http://localhost:5174
 
 # Storage Configuration
 MEDIA_STORAGE_PATH=./media
 DATABASE_PATH=./data/app.db
+# S3 bucket for temporary video storage (Nova Reel requirement)
+# Create an S3 bucket in your AWS account and add the name here
+# Do NOT include s3:// prefix - it will be added automatically
+# Format: just-bucket-name OR bucket-name/optional-prefix
+OUTPUT_S3_BUCKET=nova-reel-output-videos-abhay
 
 # Generation Configuration
 MAX_FILE_SIZE_MB=10
 MAX_PROMPT_TOKENS=512
 GENERATION_TIMEOUT_MS=300000
+
 ```
 
 ### Frontend Configuration (Optional)
